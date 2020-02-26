@@ -14,8 +14,8 @@
 		$password = $_POST['password'];
 
 		try {
-			$conexion = new PDO('mysql:host=localhost;dbname=bancopuma','root','');
 			#conexion con la Base de Datos
+			$conexion = new PDO('mysql:host=localhost;dbname=bancopuma','root','');
 		} catch (PDOException $e) {
 			echo "Error:" . $e->getMessage();
 		}
@@ -27,13 +27,28 @@
 			':usuario' => $usuario,
 			':password' =>$password
 		));
+
 		$resultado = $statement->fetch();
 
-		if ($resultado !== false) {
-			$_SESSION['usuario'] = $usuario;
+		if ($resultado !== false) { #Se comprueba si se pudo iniciar sesión como cliente
+			$_SESSION['usuario'] = $usuario; #se inicia sesión y se redirige a index
 			header('Location: index.php');
-		} else {
-			$errores .= '<li>Datos Incorrectos</li>';
+		} else { #si no se pudo iniciar como cliente, se compruena si los datos son de un admin
+			$statement_admin = $conexion->prepare('
+				SELECT * FROM accesoAdmin WHERE id_admin = :usuario AND contra_admin = :password'
+			);
+			$statement_admin->execute(array(
+				':usuario' => $usuario,
+				':password' =>$password
+			));
+			$resultado_admin = $statement_admin->fetch();
+
+			if ($resultado_admin !== false) {
+				$_SESSION['admin'] = $usuario;
+				header('Location: index.php');
+			} else {#Si no se pudo iniciar como admin tampoco, entonces los datos son incorrectos
+				$errores .= '<li>Datos Incorrectos</li>';
+			}
 		}
 	}
 	require 'views/login.view.php';

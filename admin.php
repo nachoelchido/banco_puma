@@ -13,7 +13,7 @@
 	<header>
 		<img class="logo" src="img/logo_2.png" alt="">
 		<div class="cerrar">
-			<a href="#">Cierra Sesión</a>
+			<a href="logout.php">Cierra Sesión</a>
 		</div>
 	</header>
 	<div class="content">
