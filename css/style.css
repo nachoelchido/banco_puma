@@ -16,6 +16,13 @@ header{
 	padding: 0 50px;
 }
 
+.izquierda{
+	display: flex;
+	align-items: center;
+	color: #fff;
+	font-size: 14px;
+}
+
 .logo{
 	height: 35px;
 }
@@ -84,6 +91,10 @@ form .button:active{
 	color: #fff;
 }
 
+.error{
+	color: red;
+	padding: 0 20px;
+}
 
 
 footer{

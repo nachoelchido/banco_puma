@@ -27,6 +27,13 @@ header{
 	padding: 0 20px;
 }
 
+.izquierda{
+	display: flex;
+	align-items: center;
+	color: #fff;
+	font-size: 14px;
+}
+
 .logo{
 	height: 35px;
 }
