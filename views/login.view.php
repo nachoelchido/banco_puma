@@ -8,10 +8,10 @@
 </head>
 <body>
 	<header>
-		<div class="izquierda">
+		<a class="izquierda" href="#">
 			<img class="logo" src="img/logo.png" alt="">
 			<p>Bancopuma</p>
-		</div>
+		</a>
 	</header>
 	<div class="content">
 		<div class="log-box">

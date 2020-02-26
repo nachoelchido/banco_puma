@@ -7,9 +7,6 @@
 	<title>Bancopuma</title>
 </head>
 <body>
-	<div class="admin-head">
-		<p>Ha ingresado como administrador</p>
-	</div>
 	<header>
 		<a class="izquierda" href="#">
 			<img class="logo" src="img/logo.png" alt="">
@@ -22,12 +19,18 @@
 	<div class="content">
 		<div class="consulta-box">
 			<div class="barra-info">
-				<p>Usuario: </p>
-				<h4 class="username">Pepe</h4>
+				<img src="img/user.png" alt="">
+				<?php if (!empty($nombre_usuario)):?>
+					<h4>
+						<?php echo $nombre_usuario; ?>
+					</h4>
+				<?php endif; ?>
 			</div>
 			<div class="opciones-box">
 				<div class="filtros-box">
-					<h5>Filtros</h5>
+					<a href="" class="filtro">Información personal</a>
+					<a href="" class="filtro">Cuenta</a>
+					<a href="" class="filtro">Ver préstamos</a>
 				</div>
 				<div class="resultados-box">
 					<h5>Resultados</h5>

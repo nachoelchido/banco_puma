@@ -21,6 +21,17 @@ header{
 	align-items: center;
 	color: #fff;
 	font-size: 14px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.izquierda:hover{
+	color: #c4c4c4;
+}
+
+.izquierda:active{
+	color: #04384e;
+	/*0c5d7e*/
 }
 
 .logo{

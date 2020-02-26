@@ -32,6 +32,17 @@ header{
 	align-items: center;
 	color: #fff;
 	font-size: 14px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.izquierda:hover{
+	color: #c4c4c4;
+}
+
+.izquierda:active{
+	color: #04384e;
+	/*0c5d7e*/
 }
 
 .logo{
@@ -89,8 +100,9 @@ header{
 	color: #fff;
 }
 
-.barra-info p{
-	margin-right: 15px;
+.barra-info img{
+	width: 35px;
+	margin-right: 10px;
 }
 
 .opciones-box{
@@ -101,15 +113,36 @@ header{
 }
 
 .filtros-box{
-	padding: 10px;
+	padding: 20px 10px;
 	width: 50%;
 	height: 400px;
 	display: flex;
+	flex-direction: column;
 	border-right: 1px solid #c3c3c3;
-	justify-content: center;
+	align-items: center;
+}
+
+.filtro{
+	width: 80%;
+	padding: 10px 0;
+	margin-bottom: 25px;
+	background: #d1d1d1;
+	color: #000;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 3px;
+}
+
+.filtro:hover{
+	background: #c0c0c0;
+}
+
+.filtro:active{
+	background: #467bc8;
 }
 
 .resultados-box{
+	background: #e8e8e8;
 	width: 50%;
 	height: 400px;
 	padding: 10px;
@@ -126,5 +159,14 @@ footer{
 	padding: 0 50px;
 	color: #fff;
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+footer div{
+	padding: 5px 0;
+}
+
+footer div a{
+	color: white;
 }
